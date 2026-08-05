@@ -26,21 +26,21 @@ revelar.reveal('.t-alem',
 {
     duration: 2000,
     distance: '90px',
-    delay: 1000,
+    delay: 500,
     origin: 'left', 
 })
 revelar.reveal('.subtitulo-alemdocode',
 {
     duration: 2000,
     distance: '90px',
-    delay: 1500,
+    delay: 500,
     origin: 'left',  
 })
 revelar.reveal('.btn-alem',
 {
     duration: 2000,
     distance: '70px',
-    delay: 1500, 
+    delay: 1000, 
     origin: 'left', 
 })
 revelar.reveal('.barra-verde',
