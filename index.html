@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevClub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Funnel+Display:wght@300..800&family=Matangi:wght@300..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="scroll-animation.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="scrollreveal.js" defer></script>
+</head>
+
+<body>
+    <!-- ==========OVERLAY DE INTRODUÇÃO============ -->
+    <div class="overlay-intro" id="overlayIntro">
+        <video class="video-intro" id="videoIntro" autoplay muted playsinline>
+            <source src="./vídeos/intro.mp4" type="video/mp4">
+        </video>
+        <div class="flash-intro" id="flashIntro"></div>
+        <button class="botao-pular-intro" id="botaoPularIntro">Pular ›</button>
+    </div>
+    <!-- ===================HEADER=================== -->
+    <header class="cabecalho">
+        <a href="#top"><img src="./imagens/DevClub (1).png" alt="logo-devclub" class="logo_header"></a>
+        <nav class="menu_navegacao">
+            <ul class="menu_lista">
+                <li><a href="#" class="menu_item">Formações</a></li>
+                <li><a href="#" class="menu_item">Faculdade</a></li>
+            </ul>
+        </nav>
+        <div class="nav_acoes">
+            <a href="#" class="area_do_aluno">Área do aluno</a>
+            <a href="#matricula" class="btn_header">Quero ser aluno</a>
+        </div>
+    </header>
+
+    <!-- ========================HERO========================== -->
+    <section class="secao_hero">
+
+        <div class="formatacao_hero">
+            <div class="coluna-1 hero-txt">
+                <p>&lt;!--bem vindo(a) ao devclub--&gt;</p>
+
+                <h1 class="hero_titulo">
+                    <span class="titulo_">Você não nasceu pronto<span class="ponto">.</span></span>
+                    <span class="titulo_dois">Foi treinado<span class="ponto">.</span></span>
+                </h1>
+                <p class="hero__subtitulo">
+                    Do primeiro <code>console.log()</code> ao primeiro contracheque<br>como programador(a) —
+                    formação prática, comunidade<br>ativa e IA no fluxo de trabalho, todos os dias.
+                </p>
+                <div class="hero__acoes">
+                    <a href="#matricula" class="btn-hero-matricula">Quero ser aluno</a>
+                    <a href="#formacoes" class="btn-hero-formacoes">Ver formações</a>
+                </div>
+
+                <p class="hero_alunos_contador">
+                    <span class="avatars" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </span>
+                    <strong>+ 25.000</strong> alunos já passaram por aqui
+                </p>
+            </div>
+            <div class="coluna-2">
+                <!-- SIGNATURE: terminal com efeito de digitação -->
+                <div class="hero__terminal reveal" style="--d:2">
+                    <div class="terminal">
+                        <div class="terminal__bar">
+                            <span class="terminal__dot terminal__dot--red"></span>
+                            <span class="terminal__dot terminal__dot--yellow"></span>
+                            <span class="terminal__dot terminal__dot--green"></span>
+                            <span class="terminal__title">carreira.js</span>
+                        </div>
+                        <div class="terminal__body">
+                            <pre
+                                class="terminal__code"><code id="typedCode"></code><span class="terminal__cursor" id="typedCursor">▍</span></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="carrossel-marcas">
+            <div class="caixa-paragrafo">
+                <p class="texto_carrossel">Alunos DevClub estão em empresas como</p>
+            </div>
+            <div class="carrossel-faixa">
+                <!-- Itens originais -->
+                <div class="item"><img src="./imagens/carrossel/apple.svg" alt="logo-apple"></div>
+                <div class="item"><img src="./imagens/carrossel/facebook-7.svg" alt="logo-facebook"></div>
+                <div class="item"><img src="./imagens/carrossel/mastercard.svg" alt="logo-mastercard"></div>
+                <div class="item"><img src="./imagens/carrossel/meta-icon.svg" alt="logo-meta"></div>
+                <div class="item"><img src="./imagens/carrossel/samsung.svg" alt="logo-samsung"></div>
+                <div class="item"><img src="./imagens/carrossel/spotify.svg" alt="logo-spotify"></div>
+                <div class="item"><img src="./imagens/carrossel/hostgator.svg" alt="logo-hostgator"></div>
+                <div class="item"><img src="./imagens/carrossel/adobe.svg" alt="logo-adobe"></div>
+                <div class="item"><img src="./imagens/carrossel/zoom.svg" alt="logo-zoom"></div>
+                <!-- Itens duplicados (para o loop infinito) -->
+                <div class="item"><img src="./imagens/carrossel/apple.svg" alt="logo-apple"></div>
+                <div class="item"><img src="./imagens/carrossel/facebook-7.svg" alt="logo-facebook"></div>
+                <div class="item"><img src="./imagens/carrossel/mastercard.svg" alt="logo-mastercard"></div>
+                <div class="item"><img src="./imagens/carrossel/meta-icon.svg" alt="logo-meta"></div>
+                <div class="item"><img src="./imagens/carrossel/samsung.svg" alt="logo-samsung"></div>
+                <div class="item"><img src="./imagens/carrossel/spotify.svg" alt="logo-spotify"></div>
+                <div class="item"><img src="./imagens/carrossel/hostgator.svg" alt="logo-hostgator"></div>
+                <div class="item"><img src="./imagens/carrossel/adobe.svg" alt="logo-adobe"></div>
+                <div class="item"><img src="./imagens/carrossel/zoom.svg" alt="logo-zoom"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DOIS -->
+    <div class="fundoscroll">
+
+        <div class="pin-wrap">
+            <video class="video-fundo" autoplay muted loop playsinline poster="./imagens/fundocards.webp">
+                <source src="./imagens/vídeos/aurora_flow_loop.mp4" type="video/mp4">
+                <source src="./imagens/vídeos/aurora_flow_loop.webm" type="video/webm">
+            </video>
+            <section class="secao-curso">
+                <div class="cabecalho-secao">
+                    <div class="texto-cabecalho-dois txt-secao-dois">
+                        <h1 class="logo-curso">Dev<span>Club</span></h1>
+                        <p class="descricao-secao">
+                            Um universo de formações para aprender tudo do ZERO ao Avançado.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="trilha" id="carrossel">
+
+                <!-- Card Bloco 01 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=21" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>Programação Front End</h2>
+                        <ul class="lista-topicos">
+                            <li>Estrutura, estilo e comportamento de uma página</li>
+                            <li>Semântica e acessibilidade na prática</li>
+                            <li>Responsividade para qualquer tela</li>
+                            <li>Integração com APIs e dados dinâmicos</li>
+                            <li>Deploy do seu primeiro projeto real</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 02 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=22" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>Programação Back End</h2>
+                        <ul class="lista-topicos">
+                            <li>Lógica de programação aplicada a servidores</li>
+                            <li>Construção de APIs REST do zero</li>
+                            <li>Modelagem e integração com bancos de dados</li>
+                            <li>Autenticação, segurança e boas práticas</li>
+                            <li>Deploy de uma aplicação em produção</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 03 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=23" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>Programação Full Stack</h2>
+                        <ul class="lista-topicos">
+                            <li>Front e back conversando na mesma aplicação</li>
+                            <li>Arquitetura cliente-servidor na prática</li>
+                            <li>Autenticação de ponta a ponta</li>
+                            <li>Consumo e construção de APIs</li>
+                            <li>Projeto completo do zero ao ar</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 04 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=24" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>Programação Mobile</h2>
+                        <ul class="lista-topicos">
+                            <li>Fundamentos do desenvolvimento mobile</li>
+                            <li>Interfaces nativas e multiplataforma</li>
+                            <li>Navegação entre telas e estados</li>
+                            <li>Integração com câmera, GPS e notificações</li>
+                            <li>Publicação na Play Store e App Store</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 05 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=25" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>React</h2>
+                        <ul class="lista-topicos">
+                            <li>Componentes, props e composição de UI</li>
+                            <li>Hooks e gerenciamento de estado</li>
+                            <li>Roteamento entre páginas com React Router</li>
+                            <li>Consumo de APIs e requisições assíncronas</li>
+                            <li>Boas práticas de performance e organização</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 06 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=26" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>Node</h2>
+                        <ul class="lista-topicos">
+                            <li>JavaScript rodando fora do navegador</li>
+                            <li>Criação de servidores com Express</li>
+                            <li>Manipulação de arquivos e módulos nativos</li>
+                            <li>Conexão com bancos SQL e NoSQL</li>
+                            <li>APIs prontas para produção</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 07 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=27" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>JavaScript Completo</h2>
+                        <ul class="lista-topicos">
+                            <li>Variáveis, tipos e estruturas de controle</li>
+                            <li>Funções, escopo e closures</li>
+                            <li>Manipulação do DOM na prática</li>
+                            <li>Assincronismo com Promises e async/await</li>
+                            <li>Programação orientada a objetos em JS</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 08 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=28" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>HTML5</h2>
+                        <ul class="lista-topicos">
+                            <li>Estrutura semântica de uma página</li>
+                            <li>Formulários, tabelas e elementos de mídia</li>
+                            <li>Acessibilidade desde a primeira linha</li>
+                            <li>SEO básico direto na estrutura</li>
+                            <li>Boas práticas para páginas escaláveis</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 09 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=29" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>CSS3</h2>
+                        <ul class="lista-topicos">
+                            <li>Seletores, box model e cascata</li>
+                            <li>Flexbox e Grid na prática</li>
+                            <li>Responsividade com media queries</li>
+                            <li>Transições e animações de interface</li>
+                            <li>Organização de estilos em projetos reais</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 10 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=30" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>Gestor de IA</h2>
+                        <ul class="lista-topicos">
+                            <li>IA como ferramenta de gestão e decisão</li>
+                            <li>Estruturação de times para trabalhar com IA</li>
+                            <li>Seleção de ferramentas para cada processo</li>
+                            <li>Mapeamento de oportunidades de automação</li>
+                            <li>Métricas para medir ganho real de eficiência</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 11 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=31" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>IA e Automações</h2>
+                        <ul class="lista-topicos">
+                            <li>Fundamentos de automação de processos</li>
+                            <li>Integração entre ferramentas e APIs</li>
+                            <li>Uso de IA para tratar texto, imagem e voz</li>
+                            <li>Fluxos disparados por gatilhos e eventos</li>
+                            <li>Automação de atendimento e rotinas internas</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 12 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=32" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>Claude &amp; Claude Code</h2>
+                        <ul class="lista-topicos">
+                            <li>Fundamentos de prompt e boas práticas</li>
+                            <li>Uso do Claude no dia a dia de trabalho</li>
+                            <li>Claude Code direto no terminal</li>
+                            <li>Automatizando tarefas de programação com IA</li>
+                            <li>Revisão, debug e refatoração assistidos</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 13 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=33" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>Trilha N8N</h2>
+                        <ul class="lista-topicos">
+                            <li>Lógica de nós, gatilhos e conexões</li>
+                            <li>Integração com WhatsApp, planilhas e e-mail</li>
+                            <li>Tratamento de dados entre etapas do fluxo</li>
+                            <li>Uso de IA dentro dos próprios fluxos</li>
+                            <li>Publicação de automações para clientes</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 14 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=34" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>Análise de Dados</h2>
+                        <ul class="lista-topicos">
+                            <li>Coleta, limpeza e organização de dados</li>
+                            <li>Estatística aplicada ao dia a dia</li>
+                            <li>Visualização de dados que conta uma história</li>
+                            <li>Ferramentas de análise mais usadas do mercado</li>
+                            <li>Estudo de caso com dados reais</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Card Bloco 15 -->
+                <article class="cartao-bloco">
+                    <div class="imagem-bloco">
+                        <img src="https://picsum.photos/600/375?random=35" alt="Ilustração do bloco">
+                    </div>
+                    <div class="conteudo-bloco">
+                        <h2>PowerBI</h2>
+                        <ul class="lista-topicos">
+                            <li>Conexão e modelagem de fontes de dados</li>
+                            <li>Criação de medidas com DAX</li>
+                            <li>Dashboards interativos do zero</li>
+                            <li>Relacionamentos entre tabelas</li>
+                            <li>Publicação e compartilhamento de relatórios</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========SEÇÃO TRÊS - IA ILIMITADA============ -->
+    <section class="secao-ia-ilimitada">
+
+        <!-- Área lateral esquerda - reservada para animação de scroll -->
+        <div class="area-scroll-lateral area-scroll-lateral--esquerda">
+            <!-- Elemento animado (SVG, imagem, partícula etc.) entra aqui -->
+            <div class="animation-left">
+                <canvas id="canvas-animation1"></canvas>
+            </div>
+        </div>
+
+        <div class="container-ia secao-ia">
+
+            <span class="distintivo-ia">
+                <span class="bolinha-distintivo"></span> IAs ILIMITADAS
+            </span>
+
+            <h2 class="titulo-ia">
+                Aprenda as <span class="destaque-ia">PRINCIPAIS</span> Tecnologias do Mercado do <span
+                    class="destaque-ia">ZERO</span>
+            </h2>
+
+            <p class="subtitulo-ia">
+                No <strong>DevClub</strong> você acessa as ferramentas de IA mais poderosas do mercado
+                direto na sua trilha de estudos, sem pagar assinatura de cada uma,
+                sem limite de créditos travando o seu aprendizado.
+            </p>
+
+            <p class="linha-destaque-ia">
+                // mais de <strong>R$ 20.000</strong> em ferramentas · liberado para alunos DevClub
+            </p>
+
+            <p class="texto-legenda-ia">e as novidades entram no DevClub assim que chegam ao mercado</p>
+
+            <a href="#matricula" class="btn-cta-ia">Quero acesso ao DevClub</a>
+
+        </div>
+
+        <!-- Área lateral direita - reservada para animação de scroll -->
+        <div class="area-scroll-lateral area-scroll-lateral--direita">
+            <!-- Elemento animado (SVG, imagem, partícula etc.) entra aqui -->
+            <div class="animation-right">
+                <canvas id="canvas-animation2"></canvas>
+            </div>
+        </div>
+
+    </section>
+    <!-- ==========SEÇÃO QUATRO - ALÉM DO CÓDIGO============ -->
+    <section class="secao-alem-codigo">
+        <div class="container-alem-codigo">
+
+            <div class="coluna-alem-esquerda">
+                <div class="barra-vertical-alem barra-verde"></div>
+                <h2 class="titulo-alem t-alem">
+                    Tudo que você precisa <span class="destaque-alem">além do código</span> para evoluir mais rápido
+                </h2>
+                <p class="subtitulo-alem subtitulo-alemdocode">
+                    Enquanto você programa, a gente cuida do resto: carreira, mentoria, saúde mental e comunidade.
+                </p>
+                <a href="#matricula" class="btn-cta-alem btn-alem">Conhecer curso</a>
+            </div>
+
+            <div class="coluna-alem-direita">
+                <div class="item-alem item-list1">
+                    <span class="traco-alem"></span>
+                    <p>Acompanhamento da nossa Recrutadora <strong>semanalmente</strong></p>
+                </div>
+                <div class="item-alem">
+                    <span class="traco-alem"></span>
+                    <p>Terapeuta focado em <strong>alta performance</strong></p>
+                </div>
+                <div class="item-alem">
+                    <span class="traco-alem"></span>
+                    <p>Mentorias <strong>semanais</strong> com os melhores profissionais de Tecnologia do mercado</p>
+                </div>
+                <div class="item-alem">
+                    <span class="traco-alem"></span>
+                    <p>Dezenas de <strong>Agentes de IA</strong> para te ajudar 24h por dia</p>
+                </div>
+                <div class="item-alem">
+                    <span class="traco-alem"></span>
+                    <p>Suporte humano <strong>7 dias por semana</strong></p>
+                </div>
+                <div class="item-alem">
+                    <span class="traco-alem"></span>
+                    <p>A maior e melhor <strong>comunidade</strong> de profissionais de Tecnologia do Brasil</p>
+                </div>
+                <div class="item-alem">
+                    <span class="traco-alem"></span>
+                    <p>Vagas de emprego <strong>exclusivas</strong></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ==========SEÇÃO CINCO - PLATAFORMA============ -->
+    <section class="secao-plataforma">
+        <div class="container-plataforma">
+
+            <p class="intro-plataforma plt-intro">
+                Você terá acesso a uma plataforma moderna de aulas, nossa comunidade,
+                área de vagas, <strong>IAs</strong> para acelerar seu progresso e tudo com suporte dos professores.
+            </p>
+
+            <div class="mockup-plataforma">
+                <div class="mockup-topo">
+                    <span class="mockup-bolinha"></span>
+                    <span class="mockup-bolinha"></span>
+                    <span class="mockup-bolinha"></span>
+                </div>
+
+                <div class="mockup-conteudo">
+                    <div class="mockup-texto">
+                        <h3 class="mockup-titulo">
+                            Você terá acesso a toda plataforma de cursos<br>
+                            com suporte dos professores
+                        </h3>
+
+                        <div class="mockup-recurso">
+                            <span class="mockup-icone">▣</span>
+                            <div>
+                                <p class="mockup-recurso-titulo">Plataforma de ensino</p>
+                                <p class="mockup-recurso-desc">
+                                    Você terá acesso a uma plataforma personalizada e fácil de usar,
+                                    com acesso completo a todos os conteúdos da DevClub.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-carrossel" id="carrosselPlataforma">
+                        <div class="carrossel-slides" id="carrosselSlides">
+                            <div class="carrossel-slide">
+                                <img src="./imagens/slides/plataforma.png" alt="Plataforma de cursos DevClub">
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="./imagens/slides/comunidade.png" alt="Comunidade DevClub">
+                            </div>
+                            <div class="carrossel-slide">
+                                <img src="./imagens/slides/trilhas-formações.png" alt="Trilhas e Formações">
+                            </div>
+                        </div>
+
+                        <button class="carrossel-seta carrossel-seta--esquerda" id="setaEsquerda"
+                            aria-label="Slide anterior">‹</button>
+                        <button class="carrossel-seta carrossel-seta--direita" id="setaDireita"
+                            aria-label="Próximo slide">›</button>
+
+                        <div class="carrossel-dots" id="carrosselDots"></div>
+                    </div>
+
+                </div>
+    </section>
+
+    <!-- ==========SEÇÃO SEIS - PROJETOS REAIS============ -->
+    <section class="secao-projetos-reais">
+        <div class="container-projetos-reais">
+
+            <h2 class="titulo-projetos-reais tproject">
+                Tudo com <span class="destaque-projetos-reais">Projetos Práticos e Reais</span>
+            </h2>
+            <p class="subtitulo-projetos-reais subproject">
+                Aprenda construindo sites de verdade, do zero até o deploy.
+            </p>
+
+            <div class="grid-projetos-reais">
+
+                <div class="card-projeto-real cardpr1">
+                    <div class="moldura-projeto-topo">
+                        <span class="moldura-bolinha"></span>
+                        <span class="moldura-bolinha"></span>
+                        <span class="moldura-bolinha"></span>
+                    </div>
+                    <div class="janela-projeto-real">
+                        <img src="./imagens/sites/site01.png" alt="Projeto 1 - print completo do site"
+                            class="imagem-projeto-real">
+                    </div>
+                    <p class="nome-projeto-real">Site de Carros</p>
+                </div>
+
+                <div class="card-projeto-real cardpr2">
+                    <div class="moldura-projeto-topo">
+                        <span class="moldura-bolinha"></span>
+                        <span class="moldura-bolinha"></span>
+                        <span class="moldura-bolinha"></span>
+                    </div>
+                    <div class="janela-projeto-real">
+                        <img src="./imagens/sites/site02.png" alt="Projeto 2 - print completo do site"
+                            class="imagem-projeto-real">
+                    </div>
+                    <p class="nome-projeto-real">Site de Projeto</p>
+                </div>
+
+                <div class="card-projeto-real cardpr3">
+                    <div class="moldura-projeto-topo">
+                        <span class="moldura-bolinha"></span>
+                        <span class="moldura-bolinha"></span>
+                        <span class="moldura-bolinha"></span>
+                    </div>
+                    <div class="janela-projeto-real">
+                        <img src="./imagens/sites/site03.png" alt="Projeto 3 - print completo do site"
+                            class="imagem-projeto-real">
+                    </div>
+                    <p class="nome-projeto-real">Site de Profissional da Saúde</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========SEÇÃO SETE - DEPOIMENTOS============ -->
+    <section class="secao-depoimentos">
+        <div class="container-depoimentos">
+
+            <h2 class="titulo-depoimentos tdepoi">
+                Milhares de vidas <span class="destaque-depoimentos">TRANSFORMADAS</span> dentro da nossa comunidade
+            </h2>
+
+            <div class="trilho-depoimentos" id="trilhoDepoimentos">
+
+                <div class="card-depoimento carta-dep1">
+                    <div class="video-depoimento">
+                        <img src="./imagens/depoimento-01-poster.jpg" alt="Depoimento de aluno DevClub"
+                            class="poster-depoimento">
+                        <button class="botao-play" aria-label="Assistir depoimento">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="citacao-depoimento">
+                        "Depois de entrar no DevClub, consegui meu primeiro emprego como programador
+                        em menos de 6 meses. O suporte da comunidade fez toda diferença."
+                    </p>
+                    <div class="autor-depoimento">
+                        <img src="./imagens/aluno-01.jpg" alt="" class="foto-autor">
+                        <div>
+                            <p class="nome-autor">Nome do Aluno</p>
+                            <p class="handle-autor">@usuario</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-depoimento carta-dep2">
+                    <div class="video-depoimento">
+                        <img src="./imagens/depoimento-02-poster.jpg" alt="Depoimento de aluno DevClub"
+                            class="poster-depoimento">
+                        <button class="botao-play" aria-label="Assistir depoimento">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="citacao-depoimento">
+                        "As mentorias semanais e os agentes de IA aceleraram muito meu aprendizado.
+                        Consegui migrar de carreira em menos tempo do que imaginava."
+                    </p>
+                    <div class="autor-depoimento">
+                        <img src="./imagens/aluno-02.jpg" alt="" class="foto-autor">
+                        <div>
+                            <p class="nome-autor">Nome do Aluno</p>
+                            <p class="handle-autor">@usuario</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-depoimento carta-dep3">
+                    <div class="video-depoimento">
+                        <img src="./imagens/depoimento-03-poster.jpg" alt="Depoimento de aluno DevClub"
+                            class="poster-depoimento">
+                        <button class="botao-play" aria-label="Assistir depoimento">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="citacao-depoimento">
+                        "A comunidade é o grande diferencial. Sempre tem alguém disposto a ajudar
+                        e as vagas exclusivas abriram portas que eu não esperava."
+                    </p>
+                    <div class="autor-depoimento">
+                        <img src="./imagens/aluno-03.jpg" alt="" class="foto-autor">
+                        <div>
+                            <p class="nome-autor">Nome do Aluno</p>
+                            <p class="handle-autor">@usuario</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========SEÇÃO OITO - PROFESSORES============ -->
+    <section class="secao-professores">
+        <div class="container-professores">
+
+            <div class="cabecalho-professores">
+                <div>
+                    <h2 class="titulo-professores tprof">Aprenda com os Melhores</h2>
+                    <p class="subtitulo-professores sprof">
+                        Um time de profissionais atuantes no mercado, ensinando o que realmente se usa no dia a dia.
+                    </p>
+                </div>
+                <div class="setas-professores">
+                    <button class="seta-professores" id="professoresEsquerda" aria-label="Anterior">‹</button>
+                    <button class="seta-professores" id="professoresDireita" aria-label="Próximo">›</button>
+                </div>
+            </div>
+            <div class="trilho-professores" id="trilhoProfessores">
+
+                <div class="card-professor">
+                    <img src="./imagens/professores e bonus/rodolfo.jpg" alt="Nome do Professor" class="foto-professor">
+                    <div class="rodape-professor">
+                        <div>
+                            <p class="nome-professor">Rodolfo Mori</p>
+                            <p class="cargo-professor">CEO - Desenvolvedor Full Stack</p>
+                        </div>
+                        <button class="botao-seguir" aria-label="Ver perfil">+</button>
+                    </div>
+                </div>
+
+                <div class="card-professor">
+                    <img src="./imagens/professores e bonus/fernanda.jpeg" alt="Nome do Professor"
+                        class="foto-professor">
+                    <div class="rodape-professor">
+                        <div>
+                            <p class="nome-professor">Fernanda</p>
+                            <p class="cargo-professor">Recrutadora</p>
+                        </div>
+                        <button class="botao-seguir" aria-label="Ver perfil">+</button>
+                    </div>
+                </div>
+
+                <div class="card-professor">
+                    <img src="./imagens/professores e bonus/Arnobio.jpg" alt="Nome do Professor" class="foto-professor">
+                    <div class="rodape-professor">
+                        <div>
+                            <p class="nome-professor">Agustinho</p>
+                            <p class="cargo-professor">Desenvolvedor Back End</p>
+                        </div>
+                        <button class="botao-seguir" aria-label="Ver perfil">+</button>
+                    </div>
+                </div>
+
+                <div class="card-professor">
+                    <img src="./imagens/professores e bonus/marcelo.png" alt="Nome do Professor" class="foto-professor">
+                    <div class="rodape-professor">
+                        <div>
+                            <p class="nome-professor">Henrique</p>
+                            <p class="cargo-professor">Desenvolvedor Back End</p>
+                        </div>
+                        <button class="botao-seguir" aria-label="Ver perfil">+</button>
+                    </div>
+                </div>
+
+                <div class="card-professor">
+                    <img src="./imagens/professores e bonus/robson.jpeg" alt="Nome do Professor" class="foto-professor">
+                    <div class="rodape-professor">
+                        <div>
+                            <p class="nome-professor">Marcio</p>
+                            <p class="cargo-professor">Desenvolvedor Front End</p>
+                        </div>
+                        <button class="botao-seguir" aria-label="Ver perfil">+</button>
+                    </div>
+                </div>
+                <div class="card-professor">
+                    <img src="./imagens/professores e bonus/sara.jpeg" alt="Nome do Professor" class="foto-professor">
+                    <div class="rodape-professor">
+                        <div>
+                            <p class="nome-professor">Juliana</p>
+                            <p class="cargo-professor">Desenvolvedor Full Stack</p>
+                        </div>
+                        <button class="botao-seguir" aria-label="Ver perfil">+</button>
+                    </div>
+                </div>
+
+                <div class="card-professor">
+                    <img src="./imagens/professores e bonus/tiago.jpeg" alt="Nome do Professor" class="foto-professor">
+                    <div class="rodape-professor">
+                        <div>
+                            <p class="nome-professor">Mateus</p>
+                            <p class="cargo-professor">Desenvolvedor Mobile</p>
+                        </div>
+                        <button class="botao-seguir" aria-label="Ver perfil">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========SEÇÃO NOVE - MÓDULOS BÔNUS============ -->
+    <section class="secao-bonus">
+        <div class="container-bonus">
+
+            <div class="cabecalho-bonus">
+                <h2 class="titulo-bonus tbonus">Aulas bônus</h2>
+            </div>
+
+            <div class="trilho-bonus" id="trilhoBonus">
+
+                <div class="card-bonus cbonus1">
+                    <img src="./imagens/professores e bonus/react.png.webp" alt="" class="foto-bonus">
+                    <p class="tema-bonus">React - Bônus</p>
+
+                </div>
+
+                <div class="card-bonus cbonus2">
+                    <img src="./imagens/professores e bonus/projetonetflix.png.webp" alt="" class="foto-bonus">
+                    <p class="tema-bonus">Projeto Netflix</p>
+
+                </div>
+
+                <div class="card-bonus cbonus3">
+                    <img src="./imagens/professores e bonus/projetostarbucks.png.webp" alt="" class="foto-bonus">
+                    <p class="tema-bonus">Projeto Starbucks</p>
+
+                </div>
+
+                <div class="card-bonus cbonus4">
+                    <img src="./imagens/professores e bonus/projetoinstagram.png.webp" alt="" class="foto-bonus">
+                    <p class="tema-bonus">Projeto Instagram</p>
+
+                </div>
+
+                <div class="card-bonus cbonus5">
+                    <img src="./imagens/professores e bonus/projetonikeair.jpg.webp" alt="" class="foto-bonus">
+                    <p class="tema-bonus">Projeto Nike Air</p>
+                    <!-- <span class="duracao-bonus">▶</span> -->
+                </div>
+
+            </div>
+
+            <p class="legenda-bonus">Módulos bônus liberados junto com sua matrícula.</p>
+
+        </div>
+    </section>
+
+
+    <!-- ==========SEÇÃO DEZ - CERTIFICAÇÃO MEC============ -->
+    <section class="secao-certificacao">
+        <div class="container-certificacao">
+
+            <h2 class="titulo-certificacao tcertificado">Escola reconhecida pelo MEC e com diplomas oficiais</h2>
+            <p class="subtitulo-certificacao stcertificado">Reconhecimento real para quem conclui e evolui.</p>
+
+            <div class="leque-certificados">
+                <div class="certificado certificado--tras">
+                    <p class="selo-certificado">FORMAÇÃO FULL STACK</p>
+                    <p class="titulo-cert">Certificado de<br>Conclusão do curso</p>
+                    <p class="aluno-cert">Nome do Aluno</p>
+                </div>
+                <div class="certificado certificado--frente">
+                    <p class="selo-certificado">FORMAÇÃO FRONT END</p>
+                    <p class="titulo-cert">Certificado de<br>Conclusão do curso</p>
+                    <p class="aluno-cert">Nome do Aluno</p>
+                </div>
+            </div>
+
+            <div class="badges-mec">
+                <span class="badge-mec">✓ Carga horária certificada</span>
+                <span class="badge-mec">✓ Validade nacional</span>
+                <span class="badge-mec">✓ Emissão digital imediata</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==========SEÇÃO ONZE - MERCADO============ -->
+    <section class="secao-mercado">
+        <div class="container-mercado">
+
+            <h2 class="titulo-mercado tmercado">O mercado paga bem?</h2>
+
+            <div class="card-grafico-mercado">
+                <p class="legenda-grafico-mercado">Programador Full Stack · Valores Anuais</p>
+
+                <div class="linha-grafico" data-nivel="junior">
+                    <span class="rotulo-nivel">Júnior</span>
+                    <div class="barras-nivel">
+                        <div class="barra-mercado barra-mercado--br" style="--valor: 55%;">
+                            <span class="valor-barra">R$ 70.800</span>
+                        </div>
+                        <div class="barra-mercado barra-mercado--intl" style="--valor: 78%;">
+                            <span class="valor-barra">R$ 135.928 <small>(US$27.000)</small></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="linha-grafico" data-nivel="pleno">
+                    <span class="rotulo-nivel">Pleno</span>
+                    <div class="barras-nivel">
+                        <div class="barra-mercado barra-mercado--br" style="--valor: 68%;">
+                            <span class="valor-barra">R$ 140.400</span>
+                        </div>
+                        <div class="barra-mercado barra-mercado--intl" style="--valor: 88%;">
+                            <span class="valor-barra">R$ 201.375 <small>(US$40.000)</small></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="linha-grafico" data-nivel="senior">
+                    <span class="rotulo-nivel">Sênior</span>
+                    <div class="barras-nivel">
+                        <div class="barra-mercado barra-mercado--br" style="--valor: 82%;">
+                            <span class="valor-barra">R$ 196.800</span>
+                        </div>
+                        <div class="barra-mercado barra-mercado--intl" style="--valor: 100%;">
+                            <span class="valor-barra">R$ 307.098 <small>(US$61.000)</small></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="legenda-cores-mercado">
+                    <span><i class="ponto-legenda ponto-legenda--br"></i> Brasil</span>
+                    <span><i class="ponto-legenda ponto-legenda--intl"></i> Internacional</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==========SEÇÃO DOZE - GARANTIA============ -->
+    <section class="secao-garantia">
+        <div class="container-garantia">
+
+            <div class="card-garantia-info card-grtinfo">
+                <div class="selo-garantia">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z" />
+                    </svg>
+                    <span>7 DIAS</span>
+                </div>
+                <div class="texto-garantia">
+                    <p class="risco-zero">RISCO ZERO PRA VOCÊ</p>
+                    <h2 class="titulo-garantia">7 dias de garantia incondicional</h2>
+                    <p class="descricao-garantia">
+                        Você tem até 7 dias depois da sua matrícula no DevClub para explorar todos os cursos,
+                        formações, projetos e a comunidade. Se não for pra você, é só pedir reembolso. Sem burocracia,
+                        sem letra miúda.
+                    </p>
+                    <div class="passos-garantia">
+                        <div class="passo-garantia">
+                            <span>01</span>
+                            <p>Compre hoje e acesse imediatamente</p>
+                        </div>
+                        <div class="passo-garantia">
+                            <span>02</span>
+                            <p>Use a plataforma como quiser por 7 dias</p>
+                        </div>
+                        <div class="passo-garantia">
+                            <span>03</span>
+                            <p>Não gostou?<br> Mande e-mail e receba 100% de volta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-garantia-cta card-grtcta">
+                <div class="texto-cta-garantia">
+                    <h3>E se eu não curtir?</h3>
+                    <p>
+                        Se agarre à garantia: se nos primeiros 7 dias você perceber que o DevClub
+                        não é pra você, me manda um e-mail que eu devolvo seu pagamento integralmente, sem
+                        questionamentos.
+                    </p>
+                    <a href="mailto:contato@devclub.com.br" class="botao-email-garantia" aria-label="Enviar e-mail">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="5" width="18" height="14" rx="2" />
+                            <path d="M3 7l9 6 9-6" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="selo-check-garantia">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==========SEÇÃO TREZE - FAQ============ -->
+    <section class="secao-faq">
+        <div class="container-faq">
+
+            <div class="coluna-faq-esquerda column-faq">
+                <span class="eyebrow-faq">FAQ</span>
+                <h2 class="titulo-faq">Perguntas<br>frequentes</h2>
+
+                <div class="card-suporte-faq">
+                    <img src="./imagens/suporte-avatar.jpg" alt="" class="avatar-suporte">
+                    <p>Se ainda estiver com dúvidas nossa equipe está à disposição:</p>
+                    <a href="https://wa.me/5511985778520" target="_blank" class="botao-suporte-faq">
+                        Falar com o suporte
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                            <path d="M20.5 3.5A11 11 0 003.7 17L2 22l5.2-1.6A11 11 0 1020.5 3.5z" opacity="0" />
+                            <path
+                                d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.7-4.4-3.9-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2.1.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.4.4-.2.7.2.4.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.3.7-.2.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.2.1.7-.1 1.3z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="coluna-faq-direita">
+
+                <div class="item-faq faq1">
+                    <button class="pergunta-faq">
+                        É pra iniciante ou precisa de repertório?
+                        <span class="icone-faq">+</span>
+                    </button>
+                    <div class="resposta-faq">
+                        <p>Não, o DevClub foi feito para quem está começando do zero. Você aprende desde os fundamentos
+                            até tópicos avançados, no seu ritmo.</p>
+                    </div>
+                </div>
+
+                <div class="item-faq faq2">
+                    <button class="pergunta-faq">
+                        Eu já trabalho como programador, esse curso vale a pena para mim?
+                        <span class="icone-faq">+</span>
+                    </button>
+                    <div class="resposta-faq">
+                        <p>Sim! Temos trilhas avançadas, IA aplicada e automações que vão além do básico, ótimas para
+                            quem já atua na área e quer se atualizar.</p>
+                    </div>
+                </div>
+
+                <div class="item-faq faq3">
+                    <button class="pergunta-faq">
+                        O curso tem certificado?
+                        <span class="icone-faq">+</span>
+                    </button>
+                    <div class="resposta-faq">
+                        <p>Sim, você recebe certificado de conclusão reconhecido ao finalizar cada formação.</p>
+                    </div>
+                </div>
+
+                <div class="item-faq faq4">
+                    <button class="pergunta-faq">
+                        Até quando posso me inscrever?
+                        <span class="icone-faq">+</span>
+                    </button>
+                    <div class="resposta-faq">
+                        <p>As inscrições ficam abertas por tempo limitado durante as turmas em aberto. Fique de olho nos
+                            nossos canais para não perder o prazo.</p>
+                    </div>
+                </div>
+
+                <div class="item-faq faq5">
+                    <button class="pergunta-faq">
+                        Dá para parcelar no boleto?
+                        <span class="icone-faq">+</span>
+                    </button>
+                    <div class="resposta-faq">
+                        <p>Sim, oferecemos opções de parcelamento no cartão e no boleto. Fale com nosso suporte para
+                            simular as condições disponíveis.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========SEÇÃO FOOTER============ -->
+    <section class="secao-footer-wrapper">
+
+        <!-- Área reservada para a animação do cubo (transferida do Hero) -->
+        <div class="area-cubo-footer cubo-hero" id="areaCuboFooter">
+            <!-- Cubo 3D rotativo entra aqui -->
+            <div class="cube" id="cube">
+                <!-- As 6 Faces do Cubo -->
+                <div class="face face--front"><img src="./imagens/DevClub (1).png" alt="Logo"></div>
+                <div class="face face--back"><img src="./imagens/DevClub (1).png" alt="Logo"></div>
+                <div class="face face--right"><img src="./imagens/DevClub (1).png" alt="Logo"></div>
+                <div class="face face--left"><img src="./imagens/DevClub (1).png" alt="Logo"></div>
+                <div class="face face--top"><img src="./imagens/DevClub (1).png" alt="Logo"></div>
+                <div class="face face--bottom"><img src="./imagens/DevClub (1).png" alt="Logo"></div>
+            </div>
+
+        </div>
+
+        <!-- Área reservada para o texto grande neon -->
+        <!-- Texto grande neon entra aqui -->
+        <div class="area-texto-neon-footer txt-neonfooter" id="areaTextoNeonFooter">
+            <h2 class="texto-neon-devclub">
+                <span class="neon-verde">&lt;Dev</span><span class="neon-roxo">Club/&gt;</span>
+            </h2>
+        </div>
+
+
+        <footer class="footer-devclub">
+            <div class="container-footer">
+
+                <div class="footer-topo">
+
+                    <div class="footer-marca">
+                        <p class="descricao-footer">
+                            Formação completa em programação e IA, do zero ao avançado,
+                            com suporte de professores e uma comunidade ativa.
+                        </p>
+                        <div class="redes-footer">
+                            <a href="#" class="icone-rede-footer" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                                    <circle cx="12" cy="12" r="4" />
+                                    <circle cx="17.5" cy="6.5" r="1" />
+                                </svg>
+                            </a>
+                            <a href="#" class="icone-rede-footer" aria-label="YouTube">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <rect x="2" y="5" width="20" height="14" rx="4" />
+                                    <path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none" />
+                                </svg>
+                            </a>
+                            <a href="#" class="icone-rede-footer" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <rect x="3" y="3" width="18" height="18" rx="3" />
+                                    <line x1="7" y1="10" x2="7" y2="16" />
+                                    <circle cx="7" cy="7" r="0.5" fill="currentColor" />
+                                    <path d="M11 16v-4a2 2 0 014 0v4M11 10v6" />
+                                </svg>
+                            </a>
+                            <a href="#" class="icone-rede-footer" aria-label="WhatsApp">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-colunas">
+
+                        <div class="coluna-footer">
+                            <p class="titulo-coluna-footer">Formações</p>
+                            <a href="#">Front End</a>
+                            <a href="#">Back End</a>
+                            <a href="#">Full Stack</a>
+                            <a href="#">Mobile</a>
+                            <a href="#">IA e Automações</a>
+                        </div>
+
+                        <div class="coluna-footer">
+                            <p class="titulo-coluna-footer">DevClub</p>
+                            <a href="#">Sobre nós</a>
+                            <a href="#">Professores</a>
+                            <a href="#">Comunidade</a>
+                            <a href="#">Vagas exclusivas</a>
+                            <a href="#">Faculdade</a>
+                        </div>
+
+                        <div class="coluna-footer">
+                            <p class="titulo-coluna-footer">Ajuda</p>
+                            <a href="#">Central de suporte</a>
+                            <a href="#">Perguntas frequentes</a>
+                            <a href="#">Termos de uso</a>
+                            <a href="#">Política de privacidade</a>
+                        </div>
+
+                        <div class="coluna-footer">
+                            <p class="titulo-coluna-footer">Área do aluno</p>
+                            <a href="#">Entrar na plataforma</a>
+                            <a href="#">Quero ser aluno</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="footer-base">
+                    <p>© 2026 DevClub. Todos os direitos reservados.</p>
+                    <p>CNPJ: 00.000.000/0001-00</p>
+                </div>
+
+            </div>
+        </footer>
+
+    </section>
+</body>
+
+</html>
