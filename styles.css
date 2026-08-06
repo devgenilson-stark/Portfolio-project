@@ -727,16 +727,6 @@ body {
   }
 }
 
-/* Se você estiver construindo um site e não quer que ele bloqueie as animações quando o usuário
- estiver com essa configuração ativada, você pode sobrescrever o comportamento no seu CSS. 
- Por padrão, a biblioteca suporta o recurso de acessibilidade prefers-reduced-motion. 
- No entanto, você pode forçar as animações a rodarem adicionando este código no seu arquivo CSS: */
-/* @media (prefers-reduced-motion: reduce) {
-  .animate__animated {
-    animation-duration: 1ms !important;
-    transition-duration: 1ms !important;
-  }
-} */
 /* ******************SEÇÃO DOIS***************** */
 :root {
   --largura-card: 400px;
